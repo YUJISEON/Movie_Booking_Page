@@ -1,0 +1,235 @@
+/* @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css); */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(28, 28, 29);
+  background: linear-gradient(66deg, rgb(25, 25, 26) 0%, rgb(25, 25, 27) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 14px;
+  margin: 0;
+  color: #ffff;
+}
+
+#booking-continer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: white;
+  width: 850px;
+  height: 70vh;
+  border-radius: 10px;
+  margin: 0;
+  padding: 40px;
+  color: #ffff;
+}
+
+#movie-images {
+  min-width: 350px;
+  min-height: 370px;
+  background-color: rgba(170, 169, 169, 0.849);
+  border-radius: 10px;
+  margin-right: 20px;
+  height: 85%;
+  background-size: cover;
+  /* padding: 10px 40px;
+  margin: 20px 0; */
+}
+
+.movieImg1 {
+  background-image: url("https://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83115/83115_1000.jpg");
+}
+
+.movieImg2 {
+  background-image: url("https://img.cgv.co.kr/Movie/Thumbnail/Poster/000004/4552/4552_1000.jpg");
+}
+
+.movieImg3 {
+  background-image: url("https://img.cgv.co.kr/Movie/Thumbnail/Poster/000084/84643/84643_1000.jpg");
+}
+
+.movieImg4 {
+  background-image: url("https://img.cgv.co.kr/Movie/Thumbnail/Poster/000084/84595/84595_1000.jpg");
+}
+
+#movie {
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#movie-container {
+  padding: 10px 40px;
+  background-color: rgb(185, 35, 27);
+  border-radius: 10px;
+}
+
+#movie-container select {
+  background-color: #ffff;
+  border: 0;
+  /* border-radius: 5px; */
+  font-size: 14px;
+  margin-left: 10px;
+  padding: 5px 15px 5px 15px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+}
+
+#seat-container {
+  perspective: 1000px;
+  margin-bottom: 30px;
+  position: relative;
+  height: 160px;
+  width: 300px;
+}
+
+.seats {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.movie-0 .seat {
+  background-color: rgb(214, 210, 212);
+}
+
+.movie-1,
+.movie-2,
+.movie-3,
+.movie-4 {
+  display: none;
+}
+
+.movie-show {
+  display: block;
+}
+
+.seat {
+  background-color: rgb(246, 205, 61);
+  height: 20px;
+  width: 20px;
+  margin: 3px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.seat.occupied {
+  background-color: rgb(214, 210, 212);
+}
+
+.seat.selected {
+  background-color: #fa1d0e;
+}
+
+#seat-container .seat:nth-of-type(2) {
+  margin-right: 18px;
+}
+
+#seat-container .seat:nth-last-of-type(2) {
+  margin-left: 18px;
+}
+
+.seat:not(.occupied):not(.movie-0 .seat):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+#showcase {
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: black;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+#showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+#showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+#showcase li small {
+  margin-left: 2px;
+}
+
+.screen {
+  background-color: rgba(170, 169, 169, 0.849);
+  height: 90px;
+  width: 300px;
+  margin: 15px 0;
+  transform: rotateX(-45deg);
+  /* box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7); */
+}
+
+#seat-container .row {
+  display: flex;
+}
+
+#booking {
+  width: 250px;
+  margin: 5px 0;
+  color: black;
+}
+
+#booking .booking-info,
+#booking .booking-Btn {
+  visibility: hidden;
+}
+
+.booking-info div {
+  color: black;
+}
+
+.booking-info div span {
+  color: #ff3705;
+}
+
+.booking-info {
+  float: left;
+  width: 100px;
+}
+
+.booking-Btn {
+  float: right;
+  width: 100px;
+  height: 35px;
+  background-color: white;
+  color: black;
+  padding: 0px 15px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid #d24d57;
+  /* transition: 0.5s; */
+}
+
+.booking-Btn:hover {
+  background-color: #d24d57;
+  color: white;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
